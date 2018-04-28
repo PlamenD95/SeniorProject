@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d2517c1-01e9-4f03-be90-0d61092468ce" name="Default" comment="" />
+    <list default="true" id="4d2517c1-01e9-4f03-be90-0d61092468ce" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rss_feed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,17 +17,15 @@
     <SUITE FILE_PATH="coverage/SeniorProject$classify_algo.coverage" NAME="classify_algo Coverage Results" MODIFIED="1524869159699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SeniorProject$token.coverage" NAME="token Coverage Results" MODIFIED="1524870467193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SeniorProject$Tokenization.coverage" NAME="Tokenization Coverage Results" MODIFIED="1524863330803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SeniorProject$rss_feed.coverage" NAME="rss_feed Coverage Results" MODIFIED="1524885140350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="sentiment_mod.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sentiment_mod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="103" selection-start-line="103" selection-end-line="103" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -31,8 +33,8 @@
       <file leaf-file-name="classify_algo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classify_algo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
-              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            <state relative-caret-position="71">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -40,7 +42,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testing_script.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rss_feed.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rss_feed.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing_script.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testing_script.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -63,7 +74,14 @@
       <find>featuresets</find>
       <find>featuresets.pickle</find>
       <find>print</find>
+      <find>exc</find>
+      <find>item</find>
+      <find>iran</find>
+      <find>teaser-heading-link</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -74,6 +92,7 @@
         <option value="$PROJECT_DIR$/sentiment_mod.py" />
         <option value="$PROJECT_DIR$/classify_algo.py" />
         <option value="$PROJECT_DIR$/testing_script.py" />
+        <option value="$PROJECT_DIR$/rss_feed.py" />
       </list>
     </option>
   </component>
@@ -92,6 +111,7 @@
     <option name="width" value="1400" />
     <option name="height" value="820" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -133,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.token">
+  <component name="RunManager" selected="Python.rss_feed">
     <configuration name="Tokenization" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SeniorProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,6 +192,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="rss_feed" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SeniorProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rss_feed.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="token" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SeniorProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -195,9 +234,11 @@
       <item itemvalue="Python.Tokenization" />
       <item itemvalue="Python.token" />
       <item itemvalue="Python.classify_algo" />
+      <item itemvalue="Python.rss_feed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.rss_feed" />
         <item itemvalue="Python.token" />
         <item itemvalue="Python.classify_algo" />
         <item itemvalue="Python.Tokenization" />
@@ -224,9 +265,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32859176" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3059896" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3815104" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21625" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -272,23 +313,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment_mod.py">
+    <entry file="file://$PROJECT_DIR$/classify_algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        <state relative-caret-position="71">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classify_algo.py">
+    <entry file="file://$PROJECT_DIR$/sentiment_mod.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -296,6 +334,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rss_feed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
         </state>
       </provider>
     </entry>
