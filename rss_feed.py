@@ -1,6 +1,7 @@
 import feedparser
 import urllib.request
 from bs4 import BeautifulSoup
+import sentiment_mod as sent
 
 # Function to fetch the rss feed and return the parsed RSS
 def parseRSS(rss_url):
@@ -45,10 +46,16 @@ feed1 = parseRSS('http://rss.cnn.com/rss/edition.rss')
 #     if('Trump' in post.title):
 #         print(post.title + ": " + post.link + "\n")
 
-url = "https://edition.cnn.com/2018/04/27/politics/donald-trump-korea/index.html"
+url = "https://edition.cnn.com/2018/04/29/politics/trump-london-embassy-lousy-intl/index.html"
 f = urllib.request.urlopen(url)
 soup = BeautifulSoup(f, 'html.parser')
 #print(soup.prettify())
 
+s = ''
 for div in soup.find_all('div', class_='zn-body__paragraph'):
-    print(div.text)
+    s = s + div.text + ' '
+
+print(s)
+
+print(sent.sentiment(s))
+
