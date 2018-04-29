@@ -36,18 +36,19 @@ for key, url in newsurls.items():
 
 feed1 = parseRSS('http://rss.cnn.com/rss/edition.rss')
 
-for post in feed1.entries:
-    print(post.title + ": " + post.link + "\n")
-
-print("-----------------------------------------")
-
-for post in feed1.entries:
-    if('Trump' in post.title):
-        print(post.title + ": " + post.link + "/n")
+# for post in feed1.entries:
+#     print(post.title + ": " + post.link + "\n")
+#
+# print("-----------------------------------------")
+#
+# for post in feed1.entries:
+#     if('Trump' in post.title):
+#         print(post.title + ": " + post.link + "\n")
 
 url = "https://edition.cnn.com/2018/04/27/politics/donald-trump-korea/index.html"
 f = urllib.request.urlopen(url)
-#print (f.read())
 soup = BeautifulSoup(f, 'html.parser')
-print(soup.prettify())
+#print(soup.prettify())
 
+for div in soup.find_all('div', class_='zn-body__paragraph'):
+    print(div.text)
