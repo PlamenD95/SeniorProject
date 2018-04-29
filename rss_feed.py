@@ -1,4 +1,6 @@
 import feedparser
+import urllib.request
+from bs4 import BeautifulSoup
 
 # Function to fetch the rss feed and return the parsed RSS
 def parseRSS(rss_url):
@@ -19,7 +21,7 @@ allheadlines = []
 
 # List of RSS feeds that we will fetch and combine
 newsurls = {
-    'FT': 'https://www.ft.com/news-feed'
+    'CNN': 'http://rss.cnn.com/rss/edition.rss'
 }
 
 # Iterate over the feed urls
@@ -32,13 +34,20 @@ for key, url in newsurls.items():
 #     print(hl)
 
 
-feed1 = parseRSS('https://www.ft.com/news-feed')
+feed1 = parseRSS('http://rss.cnn.com/rss/edition.rss')
 
 for post in feed1.entries:
-    print(post.title + ": " + post.link + "/n")
+    print(post.title + ": " + post.link + "\n")
 
 print("-----------------------------------------")
 
 for post in feed1.entries:
     if('Trump' in post.title):
         print(post.title + ": " + post.link + "/n")
+
+url = "https://edition.cnn.com/2018/04/27/politics/donald-trump-korea/index.html"
+f = urllib.request.urlopen(url)
+#print (f.read())
+soup = BeautifulSoup(f, 'html.parser')
+print(soup.prettify())
+
