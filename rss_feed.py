@@ -28,8 +28,17 @@ for key, url in newsurls.items():
     allheadlines.extend(getHeadlines(url))
 
 # Iterate over the allheadlines list and print each headline
-for hl in allheadlines:
-    print(hl)
+# for hl in allheadlines:
+#     print(hl)
 
-# end of code
 
+feed1 = parseRSS('https://www.ft.com/news-feed')
+
+for post in feed1.entries:
+    print(post.title + ": " + post.link + "/n")
+
+print("-----------------------------------------")
+
+for post in feed1.entries:
+    if('Trump' in post.title):
+        print(post.title + ": " + post.link + "/n")
