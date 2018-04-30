@@ -1,5 +1,5 @@
 import feedparser
-import urllib.request
+from urllib import request
 from bs4 import BeautifulSoup
 import sentiment_mod as sent
 
@@ -34,28 +34,48 @@ for key, url in newsurls.items():
 # for hl in allheadlines:
 #     print(hl)
 
-
 feed1 = parseRSS('http://rss.cnn.com/rss/edition.rss')
 
-# for post in feed1.entries:
-#     print(post.title + ": " + post.link + "\n")
-#
-# print("-----------------------------------------")
-#
-# for post in feed1.entries:
-#     if('Trump' in post.title):
-#         print(post.title + ": " + post.link + "\n")
+for post in feed1.entries:
+    print(post.title + ": " + post.link + "\n")
 
-url = "https://edition.cnn.com/2018/04/29/politics/trump-london-embassy-lousy-intl/index.html"
-f = urllib.request.urlopen(url)
-soup = BeautifulSoup(f, 'html.parser')
-#print(soup.prettify())
+print("-----------------------------------------")
 
-s = ''
-for div in soup.find_all('div', class_='zn-body__paragraph'):
-    s = s + div.text + ' '
+for post in feed1.entries:
+    if('Trump' in post.title):
+        print(post.title + ": " + post.link + "\n")
 
-print(s)
+        url = post.link
+        f = request.urlopen(url)
+        soup = BeautifulSoup(f, 'html.parser')
 
-print(sent.sentiment(s))
+        s = ''
+        for div in soup.find_all('div', class_='zn-body__paragraph'):
+            s = s + div.text + ' '
 
+        print(s)
+
+        print(sent.sentiment(s))
+
+        print("-----------------------------------------")
+
+
+feed2 = parseRSS('http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml')
+for post in feed2.entries:
+    print(post.title + ": " + post.link + "\n")
+
+
+f1 = request.urlopen('https://www.nytimes.com/2018/04/29/us/politics/ohio-governor-richard-cordray-dennis-kucinich.html')
+soup1 = BeautifulSoup(f1, 'html.parser')
+
+print("-----------------------------------------")
+
+s1 = ''
+for par in soup1.find_all('p'):
+    s1 = s1 + par.text + ' '
+
+print(s1)
+
+print(sent.sentiment(s1))
+
+print("-----------------------------------------")
