@@ -1,5 +1,8 @@
-import sentiment_mod as s
+import feedparser
+from urllib import request
+from bs4 import BeautifulSoup
+import sentiment_mod as sent
 
-print(s.sentiment("This movie was utter junk. There were absolutely 0 pythons. I don't see what the point was at all. "
-                  "Horrible movie, 0/10"))
-print(s.sentiment("This movie was awesome! The acting was great, plot was wonderful, and there were pythons...so yea!"))
+f = request.urlopen('https://www.independent.co.uk/news/world/americas/oregon-police-wild-deer-shoot-arrows-shady-cove-portland-hunting-animal-cruelty-a8329511.html')
+soup = BeautifulSoup(f, 'html.parser')
+print(soup.prettify())

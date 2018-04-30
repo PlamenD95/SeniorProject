@@ -28,7 +28,7 @@ class VoteClassifier(ClassifierI):
             votes.append(v)
 
         choice_votes = votes.count(mode(votes))
-        conf = choice_votes / len(votes)
+        conf = (choice_votes / len(votes))*100
         return conf
 
 
@@ -62,7 +62,7 @@ featuresets = pickle.load(featuresets_f)
 featuresets_f.close()
 
 random.shuffle(featuresets)
-print(len(featuresets))
+#print(len(featuresets))
 
 testing_set = featuresets[10000:]
 training_set = featuresets[:10000]

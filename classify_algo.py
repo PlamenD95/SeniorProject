@@ -45,7 +45,7 @@ documents = []
 allowed_word_types = ["J"]
 
 for p in short_pos.split('\n'):
-    documents.append((p, "pos"))
+    documents.append((p, "positive"))
     words = word_tokenize(p)
     pos = nltk.pos_tag(words)
     for w in pos:
@@ -53,7 +53,7 @@ for p in short_pos.split('\n'):
             all_words.append(w[0].lower())
 
 for p in short_neg.split('\n'):
-    documents.append((p, "neg"))
+    documents.append((p, "negative"))
     words = word_tokenize(p)
     pos = nltk.pos_tag(words)
     for w in pos:
@@ -85,7 +85,7 @@ def find_features(document):
 featuresets = [(find_features(rev), category) for (rev, category) in documents]
 
 random.shuffle(featuresets)
-print(len(featuresets))
+#print(len(featuresets))
 
 testing_set = featuresets[1500:]
 training_set = featuresets[:1500]
