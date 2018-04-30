@@ -18,64 +18,83 @@ def getHeadlines(rss_url):
     return headlines
 
 # A list to hold all headlines
-allheadlines = []
+allheadlines = {}
 
 # List of RSS feeds that we will fetch and combine
 newsurls = {
-    'CNN': 'http://rss.cnn.com/rss/edition.rss'
+    'CNN': 'http://rss.cnn.com/rss/edition.rss',
+    # 'NY Times': 'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
+    # 'BBC': 'http://feeds.bbci.co.uk/news/world/rss.xml',
+    # 'The Guardian': 'https://www.theguardian.com/world/rss',
+    # 'Independent': 'http://www.independent.co.uk/news/world/rss'
 }
 
 # Iterate over the feed urls
-for key, url in newsurls.items():
-    # Call getHeadlines() and combine the returned headlines with allheadlines
-    allheadlines.extend(getHeadlines(url))
+for url in newsurls.values():
+    feed1 = parseRSS(url)
 
-# Iterate over the allheadlines list and print each headline
-# for hl in allheadlines:
-#     print(hl)
+    for post in feed1.entries:
+        allheadlines[post.title] = post.link
 
-feed1 = parseRSS('http://rss.cnn.com/rss/edition.rss')
+for key, value in allheadlines.items():
+    print(key,value)
+    f = request.urlopen(value)
+    soup = BeautifulSoup(f, 'html.parser')
 
-for post in feed1.entries:
-    print(post.title + ": " + post.link + "\n")
-
-print("-----------------------------------------")
-
-for post in feed1.entries:
-    if('Trump' in post.title):
-        print(post.title + ": " + post.link + "\n")
-
-        url = post.link
-        f = request.urlopen(url)
-        soup = BeautifulSoup(f, 'html.parser')
-
-        s = ''
+    s = ''
+    if 'cnn' in value:
         for div in soup.find_all('div', class_='zn-body__paragraph'):
             s = s + div.text + ' '
+    
 
-        print(s)
+    print(s)
 
-        print(sent.sentiment(s))
+    print(sent.sentiment(s))
 
-        print("-----------------------------------------")
+    print("-----------------------------------------")
 
-
-feed2 = parseRSS('http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml')
-for post in feed2.entries:
-    print(post.title + ": " + post.link + "\n")
-
-
-f1 = request.urlopen('https://www.nytimes.com/2018/04/29/us/politics/ohio-governor-richard-cordray-dennis-kucinich.html')
-soup1 = BeautifulSoup(f1, 'html.parser')
-
-print("-----------------------------------------")
-
-s1 = ''
-for par in soup1.find_all('p'):
-    s1 = s1 + par.text + ' '
-
-print(s1)
-
-print(sent.sentiment(s1))
-
-print("-----------------------------------------")
+# feed1 = parseRSS('http://rss.cnn.com/rss/edition.rss')
+#
+# for post in feed1.entries:
+#     print(post.title + ": " + post.link + "\n")
+#
+# print("-----------------------------------------")
+#
+# for post in feed1.entries:
+#     if('Trump' in post.title):
+#         print(post.title + ": " + post.link + "\n")
+#
+#         url = post.link
+#         f = request.urlopen(url)
+#         soup = BeautifulSoup(f, 'html.parser')
+#
+#         s = ''
+#         for div in soup.find_all('div', class_='zn-body__paragraph'):
+#             s = s + div.text + ' '
+#
+#         print(s)
+#
+#         print(sent.sentiment(s))
+#
+#         print("-----------------------------------------")
+#
+#
+# feed2 = parseRSS('http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml')
+# for post in feed2.entries:
+#     print(post.title + ": " + post.link + "\n")
+#
+#
+# f1 = request.urlopen('https://www.nytimes.com/2018/04/29/us/politics/ohio-governor-richard-cordray-dennis-kucinich.html?partner=rss&emc=rss')
+# soup1 = BeautifulSoup(f1, 'html.parser')
+#
+# print("-----------------------------------------")
+#
+# s1 = ''
+# for par in soup1.find_all('p'):
+#     s1 = s1 + par.text + ' '
+#
+# print(s1)
+#
+# print(sent.sentiment(s1))
+#
+# print("-----------------------------------------")
