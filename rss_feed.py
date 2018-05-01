@@ -2,6 +2,10 @@ import feedparser
 from urllib import request
 from bs4 import BeautifulSoup
 import sentiment_mod as sent
+import summarization as summar
+
+
+fs = summar.FrequencySummarizer()
 
 def get_valid_input(prompt):
     while True:
@@ -79,12 +83,13 @@ for key, value in allheadlines.items():
             str = str + par.text + ' '
 
     else:
-        print("The topic of your choice is not present in the '%s' article\n" % key)
+        print("The topic of your choice is not present in the '%s' article.\n" % key)
         print("-----------------------------------------")
         continue
 
     print(key, value)
-    print(str)
+    for sumstr in fs.summarize(str, 2):
+        print('*', sumstr)
     print(sent.sentiment(str))
     print("-----------------------------------------")
 
