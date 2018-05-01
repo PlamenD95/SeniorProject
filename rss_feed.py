@@ -40,7 +40,7 @@ newsurls = {
     'Independent': 'http://www.independent.co.uk/news/world/rss'
 }
 
-userstring = get_valid_input("Please, enter a topic you wish you wish to search for:")
+userstring = get_valid_input("Please, enter a topic you wish to search for:")
 
 # Iterate over the feed urls
 for url in newsurls.values():
@@ -50,8 +50,11 @@ for url in newsurls.values():
         allheadlines[post.title] = post.link
 
 for key, value in allheadlines.items():
-    f = request.urlopen(value)
-    soup = BeautifulSoup(f, 'html.parser')
+    try:
+        f = request.urlopen(value)
+        soup = BeautifulSoup(f, 'html.parser')
+    except:
+        pass
 
     str = ''
 

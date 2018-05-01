@@ -45,7 +45,7 @@ documents = []
 allowed_word_types = ["J"]
 
 for p in short_pos.split('\n'):
-    documents.append((p, "positive"))
+    documents.append((p, "pos"))
     words = word_tokenize(p)
     pos = nltk.pos_tag(words)
     for w in pos:
@@ -53,7 +53,7 @@ for p in short_pos.split('\n'):
             all_words.append(w[0].lower())
 
 for p in short_neg.split('\n'):
-    documents.append((p, "negative"))
+    documents.append((p, "neg"))
     words = word_tokenize(p)
     pos = nltk.pos_tag(words)
     for w in pos:
